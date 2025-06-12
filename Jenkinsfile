@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: ''
+                git branch: 'main', url: 'https://github.com/SanjataPatil/ecommerce.git'
             }
         }
 
@@ -35,9 +35,9 @@ pipeline {
                     sh """
                         ssh -i \$KEY -o StrictHostKeyChecking=no ${DOCKER_USER}@${DOCKER_HOST_IP} \\
                             "cd ${DOCKER_APP_DIR} && \\
-                             docker build -t vite-story-app . && \\
-                             docker rm -f vite-story-container || true && \\
-                             docker run -d -p 80:80 --name vite-story-container vite-story-app"
+                             docker build -t vite-ecommerce-app . && \\
+                             docker rm -f vite-ecommerce-container || true && \\
+                             docker run -d -p 80:80 --name vite-story-container vite-ecommerce-app"
                     """
                 }
             }
