@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HOST_IP = "13.203.201.201"
+        DOCKER_HOST_IP = "13.235.73.32"
         DOCKER_USER = "ubuntu"
         DOCKER_APP_DIR = "web-app"
     }
